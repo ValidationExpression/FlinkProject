@@ -1,0 +1,7 @@
+Event{user='a', url='./home', timestamp=1000}
+Event{user='b', url='./h', timestamp=1212}
+Event{user='c', url='./sdf', timestamp=1231}
+Event{user='b', url='./ada?id=1', timestamp=2002}
+Event{user='c', url='./sdf', timestamp=3213}
+Event{user='b', url='./ada?id=2', timestamp=2222}
+Event{user='b', url='./ada?id=3', timestamp=3212}
