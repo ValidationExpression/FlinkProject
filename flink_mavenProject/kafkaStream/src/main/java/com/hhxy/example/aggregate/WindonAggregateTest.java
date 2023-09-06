@@ -8,7 +8,6 @@ import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.windowing.assigners.TumblingEventTimeWindows;
 import org.apache.flink.streaming.api.windowing.time.Time;
-
 import java.time.Duration;
 import java.util.HashSet;
 
@@ -27,7 +26,7 @@ public class WindonAggregateTest {
         //2.数据源
         SingleOutputStreamOperator<Event> source = env.addSource(new ClickHouse())
                 //乱序流水位线,watermark
-                .assignTimestampsAndWatermarks(WatermarkStrategy.<Event>forBoundedOutOfOrderness(Duration.ofSeconds(0))
+                .assignTimestampsAndWatermarks(WatermarkStrategy.<Event>forBoundedOutOfOrderness(Duration.ZERO)
                         .withTimestampAssigner(new SerializableTimestampAssigner<Event>() {
                             @Override
                             public long extractTimestamp(Event event, long l) {
