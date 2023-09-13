@@ -75,7 +75,7 @@ public class UrlCountTest {
 
     //窗口信息,这里可以获取到每一个窗口的信息,-->这里就会获得同一个窗口不同的url的数量信息,以此可以对url进行排序处理.
     public static class UrlCountResult extends ProcessWindowFunction<Long,UrlPojo,String, TimeWindow> {
-        @Override
+        @Override   //这里的四个参数分别为输入,输出,key的类型, 时间窗口
         public void process(String url, ProcessWindowFunction<Long, UrlPojo, String, TimeWindow>.Context context, Iterable<Long> iterable, Collector<UrlPojo> collector) throws Exception {
             Long start =context.window().getStart();
             Long end = context.window().getEnd();

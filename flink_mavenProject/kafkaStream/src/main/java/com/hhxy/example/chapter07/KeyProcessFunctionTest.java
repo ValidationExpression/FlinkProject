@@ -4,7 +4,7 @@ import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.functions.KeyedProcessFunction;
 import org.apache.flink.util.Collector;
-
+import com.hhxy.example.chapter07.Event;
 import java.sql.Timestamp;
 
 public class KeyProcessFunctionTest {
@@ -30,13 +30,13 @@ public class KeyProcessFunctionTest {
 
                         //方式2: 测试事件定时器
                         Long timestamp = context.timestamp();
-                        collector.collect(context.getCurrentKey()+",数据时间戳:"+new Timestamp(timestamp));
-                        context.timerService().registerEventTimeTimer(timestamp+10*1000L);
+                        collector.collect(context.getCurrentKey() + ",数据时间戳:" + new Timestamp(timestamp));
+                        context.timerService().registerEventTimeTimer(timestamp + 10 * 1000L);
                     }
 
                     @Override
                     public void onTimer(long timestamp, KeyedProcessFunction<String, Event, String>.OnTimerContext ctx, Collector<String> out) throws Exception {
-                        out.collect(ctx.getCurrentKey() +",定时器触发时间:"+new Timestamp(timestamp));
+                        out.collect(ctx.getCurrentKey() + ",定时器触发时间:" + new Timestamp(timestamp));
                     }
                 }).print();
 

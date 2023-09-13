@@ -1,6 +1,7 @@
 package com.hhxy.example.chapter07;
 
 import org.apache.flink.streaming.api.functions.source.SourceFunction;
+import com.hhxy.example.chapter07.*;
 
 import java.util.Random;
 

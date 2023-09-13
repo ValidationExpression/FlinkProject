@@ -1,5 +1,7 @@
 package com.hhxy.example.chapter07;
 
+import java.sql.Timestamp;
+
 /**
  * 实现的功能:用户点击某一个网页
  */
@@ -22,7 +24,7 @@ public class Event {
         return "Event{" +
                 "user='" + user + '\'' +
                 ", url='" + url + '\'' +
-                ", timestamp=" + timestamp +
+                ", timestamp=" + new Timestamp(timestamp) +
                 '}';
     }
 }
