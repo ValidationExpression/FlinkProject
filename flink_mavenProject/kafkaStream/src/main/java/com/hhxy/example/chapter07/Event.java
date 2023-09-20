@@ -1,6 +1,6 @@
 package com.hhxy.example.chapter07;
 
-import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 
 /**
  * 实现的功能:用户点击某一个网页
@@ -9,6 +9,9 @@ public class Event {
     public String user;  //用户
     public String url;  //网页的地址
     public Long timestamp;
+
+    //生成格式化时间
+    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     public Event() {
     }
@@ -24,7 +27,7 @@ public class Event {
         return "Event{" +
                 "user='" + user + '\'' +
                 ", url='" + url + '\'' +
-                ", timestamp=" + new Timestamp(timestamp) +
+                ", timestamp=" + format.format(timestamp) +
                 '}';
     }
 }

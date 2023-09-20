@@ -4,7 +4,7 @@ import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.functions.KeyedProcessFunction;
 import org.apache.flink.util.Collector;
-import com.hhxy.example.chapter07.Event;
+
 import java.sql.Timestamp;
 
 public class KeyProcessFunctionTest {

@@ -1,6 +1,5 @@
 package com.hhxy.example.chapter07;
 
-import com.hhxy.example.product.UrlPojo;
 import org.apache.flink.api.common.eventtime.SerializableTimestampAssigner;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.common.functions.AggregateFunction;
