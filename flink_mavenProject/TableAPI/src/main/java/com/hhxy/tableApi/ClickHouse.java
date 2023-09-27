@@ -1,6 +1,7 @@
-package com.hhxy.example09;
+package com.hhxy.tableApi;
 
 import org.apache.flink.streaming.api.functions.source.SourceFunction;
+
 import java.util.Random;
 
 //SourceFunction<Event>这里的Event表示所返回的数据类型.
